@@ -1,8 +1,4 @@
-# nearby
-An app that connects local buyers to sellers. This app has two roles: `Buyer` & `Seller`. 
-
-- A Buyer can log in and make purchases. 
-- A seller can add products, sell them in 5-10 pin codes within his territory.
+# papertrail
 
 ## Code Structure
 
@@ -32,10 +28,3 @@ An app that connects local buyers to sellers. This app has two roles: `Buyer` & 
 - `setups` - It is used to configure libraries specific settings.
 
 - `tests` - It contains tests for testing REST Endpoints. All test files are of the format `*.test.js`
-
-# ENV File
-
-```
-   MONGODB_URI=<your-mongodb-uri>
-   PORT=<your-port>
-```
