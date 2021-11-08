@@ -1,0 +1,43 @@
+.
+├── app.js
+├── app.test.js
+├── .babelrc.js
+├── _config
+│   └── app.js
+├── controllers
+│   ├── auth.js
+│   └── users.js
+├── .env
+├── .gitignore
+├── jest.config.js
+├── jsconfig.json
+├── middlewares
+│   └── auth.js
+├── models
+│   ├── index.js
+│   └── users.js
+├── package.json
+├── package-lock.json
+├── README.md
+├── routes
+│   ├── auth.js
+│   ├── index.js
+│   └── users.js
+├── setups
+│   └── mongoose.js
+├── start.js
+├── tests
+│   ├── auth.test.js
+│   ├── setups.js
+│   └── users.test.js
+├── tree.txt
+├── _utils
+│   ├── auth.js
+│   ├── auth.test.js
+│   ├── errors.js
+│   └── response.js
+└── validators
+    ├── auth.js
+    └── users.js
+
+9 directories, 31 files

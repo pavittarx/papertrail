@@ -1,0 +1,9 @@
+{
+  "include": ["**/*"],
+  "compilerOptions": {
+    "module": "commonJS",
+    "target": "es2015",
+    "baseUrl": "./"
+  },
+  "exclude": ["node_modules/**", "**/node_modules/*", "logs", "local"]
+}
