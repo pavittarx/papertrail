@@ -1,11 +1,14 @@
 const path = require('path');
+const webpack = require('webpack');
 const HTMLWebpackPlugin = require("html-webpack-plugin");
 
 module.exports = {
   name: "React App",
   mode: "development",
   target: "web",
+
   entry: './app/index.js',
+  
   output: {
     path: path.resolve(__dirname, 'build'),
     filename: 'bundle.js',
@@ -13,7 +16,8 @@ module.exports = {
 
   resolve: {
     roots: [path.resolve(__dirname, "app")],
-    modules: ["node_modules", path.resolve(__dirname, "app")]
+    modules: ["node_modules", "./app"],
+    extensions: [".js", ".jsx", ".ts", ".tsx"]
   },
 
   module: {
@@ -62,6 +66,9 @@ module.exports = {
   plugins: [
     new HTMLWebpackPlugin({
       template: path.join(__dirname, "index.html")
+    }),
+    new webpack.ProvidePlugin({
+      React: "react"
     })
   ]
 }
