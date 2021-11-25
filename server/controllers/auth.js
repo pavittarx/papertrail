@@ -9,7 +9,7 @@ import {
 import { Success } from "_utils/response";
 
 export const register = async (req, res) => {
-  const { name, email, password, type, phone } = req.body;
+  const { name, email, password, phone } = req.body;
 
   const user = await Users.findOne({ email });
 
@@ -21,7 +21,6 @@ export const register = async (req, res) => {
     name,
     email,
     password: hash,
-    type,
     phone
   });
 

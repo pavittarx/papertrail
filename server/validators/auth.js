@@ -7,10 +7,6 @@ export const registerValidator = [
   body("password")
     .notEmpty()
     .withMessage("The field `password` cannot be empty."),
-  body("type")
-    .notEmpty()
-    .isIn(["buyer", "seller"])
-    .withMessage("Possible types: `buyer`, `seller`."),
   body("email")
     .optional()
     .isEmail()

@@ -5,10 +5,6 @@ const userSchema = new mongoose.Schema(
     name: String,
     email: String,
     password: String,
-    type: {
-      type: String,
-      enum: ["buyer", "seller"],
-    },
     phone: String,
   },
   { timestamps: true }
