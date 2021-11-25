@@ -1,0 +1,31 @@
+.list-view-ctr{
+
+  border-bottom: 1px solid #999;
+  
+  .add-item{
+    padding: 10px;
+
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: space-between;
+
+    .text-content{
+      color: #555;
+      outline: 0;
+      border: 0;
+      padding: 10px 0;
+      flex:1;
+      max-width: 80%;
+    }
+
+    .button{
+      background: pink;
+      color: red;
+      padding: 10px 13px;
+      justify-self: right;
+      align-self: flex-end;
+    }
+  }
+
+}

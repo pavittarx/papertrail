@@ -1,19 +1,11 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-import {Helmet} from "react-helmet";
-
-import Home from "pages/Home";
+import App from "pages/app";
 
 ReactDOM.render(
-  <> 
-  <Helmet> 
-    <title> Papertrail </title>
-  </Helmet>
-
-  Working?
-
-  <Home />
+  <>
+    <App />
   </>,
   document.getElementById('app')
 );

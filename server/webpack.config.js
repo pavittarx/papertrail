@@ -3,7 +3,8 @@ const path = require("path");
 module.exports = {
   mode: "development",
   entry: "./server/index.js",
-
+  target: "node",
+  
   output: {
     path: path.resolve(__dirname, 'dist'),
     filename: "bundle.js"
@@ -31,7 +32,7 @@ module.exports = {
                 {
                   regenerator: true,
                 },
-              ],
+              ]
             ]
           }
         }
@@ -41,8 +42,6 @@ module.exports = {
       }
     ]
   },
-
-  target: "node",
   externals: {
     'express': "commonjs express",
     "@aws-sdk/client-s3": "@aws-sdk/client-s3",
@@ -50,6 +49,3 @@ module.exports = {
     "bcrypt": "commonjs bcrypt"
   }
 }
-
-
-

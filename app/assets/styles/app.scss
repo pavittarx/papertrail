@@ -1,0 +1,14 @@
+> * {
+  box-sizing: border-box;
+}
+
+input, button{
+  border: 0;
+  outline: 0;
+  background: none;
+}
+
+:root{
+  --background: #ddd;
+  --text: #222;
+}
