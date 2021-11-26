@@ -4,7 +4,7 @@ import { config } from "dotenv";
 
 import { setupMongoose } from "./setups";
 
-import app from "app";
+import app from "server/app";
 
 config();
 
@@ -16,29 +16,28 @@ describe("Auth Features", () => {
   beforeAll(async () => {
     jest.setTimeout(20 * 1000);
 
-    _app = app.listen(process.env.PORT);
+    _app = app.listen(0);
     _req = supertest.agent(app);
     _mongoose = await setupMongoose();
   });
 
   afterAll(async () => {
-    await _mongoose.connection.db.dropCollection("users");
+    await _mongoose.connection.db.collection("users").deleteOne({email: userCreds.email});
 
     await _mongoose.connection.close();
     await _mongoose.disconnect();
     await _app.close();
   });
 
-  const user = {
+  const userCreds = {
     name: "Danny Wrath",
     email: "hello@wrath.com",
     password: "123456789",
-    type: "buyer",
     phone: "9995577733",
   };
 
   test("Register User", async () => {
-    const db_user = await _req.post("/api/v1/register").send(user);
+    const db_user = await _req.post("/api/v1/register").send(userCreds);
 
     expect(db_user).toBeDefined();
 
@@ -54,7 +53,7 @@ describe("Auth Features", () => {
   test("User Login", async () => {
     const db_user = await _req
       .post("/api/v1/login")
-      .send({ email: user.email, password: user.password });
+      .send({ email: userCreds.email, password: userCreds.password });
 
     expect(db_user).toBeDefined();
 

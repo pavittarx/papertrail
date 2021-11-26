@@ -25,7 +25,7 @@ describe("Basic Testing", () => {
     expect(response.body).toBeDefined();
     expect(response.headers["content-type"]).toMatch(/json/);
     expect(response.body).toEqual({
-      message: "Server up at Port 7000",
+      message: "Server up at Port 3000",
     });
 
     return response;
