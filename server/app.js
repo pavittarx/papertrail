@@ -2,7 +2,7 @@ import express from "express";
 import cors from "cors";
 import { config } from "dotenv";
 
-import { authRouter, userRouter } from "./routes";
+import { authRouter, userRouter, plansRouter } from "./routes";
 
 /**
  * Picks up Env. variables from the .env file.
@@ -24,6 +24,7 @@ app.use(express.json());
 
 app.use("/api/v1", authRouter);
 app.use("/api/v1", userRouter);
+app.use("/api/v1", plansRouter);
 
 /**
  * Sample Test Route for Express Testing

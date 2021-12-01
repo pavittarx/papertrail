@@ -38,9 +38,9 @@ export const hasErrors = (req, res) => {
  * return {Function} - Express Controller
  */
 export const handleErrors = (func) => {
-  return async (req, res) => {
+  return async (req, res, next) => {
     try {
-      await func(req, res);
+      await func(req, res, next);
     } catch (error) {
       console.log(error);
       res.status(400).send(Err(error.message));

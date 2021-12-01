@@ -1,7 +1,8 @@
 import { Users } from "models";
 import { verifyAndDecodeToken } from "_utils/auth";
+import { handleErrors } from "_utils/response";
 
-export const authenticate = async (req, res, next) => {
+const _authenticate = async (req, res, next) => {
   const token =
     req.headers &&
     req.headers.authorization &&
@@ -32,3 +33,6 @@ export const checkType = (typeToCheck) => {
     next();
   };
 };
+
+
+export const authenticate = handleErrors(_authenticate);
