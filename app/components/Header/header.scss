@@ -1,6 +1,10 @@
+@import 'assets/styles/app.scss';
+
 .app-header{
   padding: 1.25rem 1.5rem;
 
-  background: var(--background);
+  background: map.get($theme-colors, "accent");
   color: var(--text);
-}
+
+  border: 1px solid #222;
+};
